@@ -1,1 +1,1 @@
-    pip install requests beautifulsoup4 selenium lxml schedule pyautogui GeckoDriver ChromeDriver webdriver_manager
+pip install requests beautifulsoup4 selenium lxml schedule pyautogui GeckoDriver ChromeDriver webdriver_manager urllib3

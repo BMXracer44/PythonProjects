@@ -7,22 +7,21 @@ import time
 element_list = []
 
 # Set up Chrome options (optional)
-options = webdriver.ChromeOptions();
-options.add_argument("--headless") # Run in headless mode (optional)
+options = webdriver.ChromeOptions()
+options.add_argument("--headless")  # Run in headless mode (optional)
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 
-# Use a proper Service object
-service = Service(ChromeDriverManager().install())
+# Use a proper Service object (Not needed with updated Selenium)
 
 for page in range(1, 3):
-    #Initialize driver properly
-    driver = webdriver.Chrome(service=service, options=options)
+    # Initialize driver properly
+    driver = webdriver.Chrome(options=options)#service=service, options=options)
 
     # Load the URL
     url = f"https://webscraper.io/test-sites/e-commerce/static/computers/laptops?page={page}"
     driver.get(url)
-    time.sleep(2) # Optional wait to ensire page loads
+    time.sleep(2)  # Optional wait to ensure page loads
 
     # Extract product details
     titles = driver.find_elements(By.CLASS_NAME, "title")
